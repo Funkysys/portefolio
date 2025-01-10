@@ -10,7 +10,7 @@ const Title = () => {
             opacity: 0,
             x: -220,
             y: -0,
-            scale: 0.5,
+            scale: 1,
             rotate: 690,
             rotateX: 720,
           }}
@@ -22,7 +22,7 @@ const Title = () => {
             x: -200,
             y: -60,
             toy: -20,
-            scale: 0.5,
+            scale: 1,
             rotate: 1060,
             rotateX: 1080,
           }}
@@ -34,7 +34,7 @@ const Title = () => {
             x: -170,
             y: -110,
             toy: -33,
-            scale: 0.5,
+            scale: 1,
             rotate: 707,
             rotateX: 720,
           }}
@@ -46,7 +46,7 @@ const Title = () => {
             x: -150,
             y: -150,
             toy: -40,
-            scale: 0.5,
+            scale: 1,
             rotate: -1088,
             rotateX: -360,
           }}
@@ -58,8 +58,8 @@ const Title = () => {
             x: -100,
             y: -170,
             toy: -46,
-            scale: 0.5,
-            rotate: -725,
+            scale: 1,
+            rotate: -726,
             rotateX: 360,
           }}
         />
@@ -70,7 +70,7 @@ const Title = () => {
             x: -50,
             y: -200,
             toy: -49,
-            scale: 0.5,
+            scale: 1,
             rotate: 357,
             rotateX: 720,
           }}
@@ -82,7 +82,7 @@ const Title = () => {
             x: -0,
             y: -220,
             toy: -50,
-            scale: 0.5,
+            scale: 1,
             rotate: 720,
             rotateX: -1080,
           }}
@@ -94,7 +94,7 @@ const Title = () => {
             x: 50,
             y: -200,
             toy: -49,
-            scale: 0.5,
+            scale: 1,
             rotate: -1077,
             rotateX: -720,
             marginLeft: "15px",
@@ -107,7 +107,7 @@ const Title = () => {
             x: 100,
             y: -170,
             toy: -46,
-            scale: 0.5,
+            scale: 1,
             rotate: -715,
             rotateX: 360,
           }}
@@ -119,7 +119,7 @@ const Title = () => {
             x: 150,
             y: -150,
             toy: -42,
-            scale: 0.5,
+            scale: 1,
             rotate: 369,
             rotateX: 720,
           }}
@@ -131,7 +131,7 @@ const Title = () => {
             x: 170,
             y: -110,
             toy: -33,
-            scale: 0.5,
+            scale: 1,
             rotate: 733,
             rotateX: -1080,
           }}
@@ -143,7 +143,7 @@ const Title = () => {
             x: 200,
             y: -60,
             toy: -20,
-            scale: 0.5,
+            scale: 1,
             rotate: -1060,
             rotateX: -720,
           }}
@@ -154,7 +154,7 @@ const Title = () => {
             opacity: 0,
             x: 220,
             y: 0,
-            scale: 0.5,
+            scale: 1,
             rotate: -690,
             rotateX: 360,
           }}
@@ -167,7 +167,7 @@ const Title = () => {
             opacity: 0,
             x: -220,
             y: 0,
-            scale: 0.5,
+            scale: 1,
             rotate: 360,
             rotateX: 720,
           }}
@@ -178,7 +178,7 @@ const Title = () => {
             opacity: 0,
             x: -190,
             y: 60,
-            scale: 0.5,
+            scale: 1.05,
             rotate: 720,
             rotateX: -1080,
           }}
@@ -189,9 +189,10 @@ const Title = () => {
             opacity: 0,
             x: -170,
             y: 110,
-            scale: 0.5,
+            scale: 1.1,
             rotate: -360,
             rotateX: -720,
+            marginLeft: "7px",
           }}
         />
         <LetterForTitle
@@ -200,9 +201,10 @@ const Title = () => {
             opacity: 0,
             x: -170,
             y: 150,
-            scale: 0.5,
+            scale: 1.15,
             rotate: -720,
             rotateX: 360,
+            marginLeft: "9px",
           }}
         />
         <LetterForTitle
@@ -211,9 +213,10 @@ const Title = () => {
             opacity: 0,
             x: -100,
             y: 170,
-            scale: 0.5,
+            scale: 1.2,
             rotate: 1080,
             rotateX: 720,
+            marginLeft: "11px",
           }}
         />
         <LetterForTitle
@@ -222,9 +225,10 @@ const Title = () => {
             opacity: 0,
             x: -50,
             y: 200,
-            scale: 0.5,
+            scale: 1.25,
             rotate: 720,
             rotateX: -1080,
+            marginLeft: "13px",
           }}
         />
         <LetterForTitle
@@ -233,9 +237,10 @@ const Title = () => {
             opacity: 0,
             x: 0,
             y: 220,
-            scale: 0.5,
+            scale: 1.3,
             rotate: -360,
             rotateX: -720,
+            marginLeft: "15px",
           }}
         />
         <LetterForTitle
@@ -244,9 +249,10 @@ const Title = () => {
             opacity: 0,
             x: 50,
             y: 200,
-            scale: 0.5,
+            scale: 1.25,
             rotate: -720,
             rotateX: 360,
+            marginLeft: "13px",
           }}
         />
         <LetterForTitle
@@ -255,9 +261,10 @@ const Title = () => {
             opacity: 0,
             x: 100,
             y: 170,
-            scale: 0.5,
+            scale: 1.2,
             rotate: 1080,
             rotateX: 720,
+            marginLeft: "11px",
           }}
         />
         <LetterForTitle
@@ -266,9 +273,10 @@ const Title = () => {
             opacity: 0,
             x: 140,
             y: 150,
-            scale: 0.5,
+            scale: 1.15,
             rotate: 720,
             rotateX: -1080,
+            marginLeft: "9px",
           }}
         />
         <LetterForTitle
@@ -277,9 +285,10 @@ const Title = () => {
             opacity: 0,
             x: 170,
             y: 110,
-            scale: 0.5,
+            scale: 1.1,
             rotate: -360,
             rotateX: -720,
+            marginLeft: "7px",
           }}
         />
         <LetterForTitle
@@ -288,9 +297,10 @@ const Title = () => {
             opacity: 0,
             x: 190,
             y: 60,
-            scale: 0.5,
+            scale: 1.05,
             rotate: -720,
             rotateX: 360,
+            marginLeft: "5px",
           }}
         />
         <LetterForTitle
@@ -299,7 +309,7 @@ const Title = () => {
             opacity: 0,
             x: 200,
             y: 0,
-            scale: 0.5,
+            scale: 1,
             rotate: 1080,
             rotateX: 720,
           }}
