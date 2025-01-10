@@ -17,7 +17,7 @@ export const Star = ({ x, y }: StarProps) => {
         opacity: 1,
         scale: 1,
       }}
-      transition={{ duration: 2 }}
+      transition={{ duration: 3 }}
       className="absolute w-3 h-3 bg-yellow-400 rounded-full shadow-lg"
       style={{
         left: x,
