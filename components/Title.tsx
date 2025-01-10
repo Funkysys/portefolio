@@ -159,7 +159,7 @@ const Title = () => {
             letter: "S",
             opacity: 0,
             x: 220,
-            y: 0,
+            y: -5,
             scale: 0.8,
             marginLeft: "-7px",
             rotate: -690,
