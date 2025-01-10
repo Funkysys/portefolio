@@ -1,6 +1,7 @@
 "use client";
 
 import { Circle } from "@/components/Circle";
+import { Planet } from "@/components/Planet";
 import { Star } from "@/components/Star";
 import Title from "@/components/Title";
 
@@ -14,7 +15,7 @@ export default function Home() {
       <Star x="91%" y="18%" />
       <Star x="14%" y="74%" />
       <div className="relative flex w-[100vw] h-[100vh]  flex-col gap-8 justify-center items-center font-roboto">
-        <Title />
+        <Planet radius={300} size="50px" speed={10} /> <Title />
         <Circle />
       </div>
     </main>
