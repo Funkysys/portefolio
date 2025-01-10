@@ -8,7 +8,13 @@ export default {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        belleza: ["var(--font-belleza)", "sans-serif"],
+        ruda: ["var(--font-ruda)", "sans-serif"],
+        inter: ["Inter", "sans-serif"],
+      },
       colors: {
+        "perso-bg": "#13182A",
         background: "var(--background)",
         foreground: "var(--foreground)",
       },

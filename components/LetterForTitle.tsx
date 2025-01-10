@@ -6,6 +6,8 @@ interface LetterForTitleProps {
     opacity: number;
     x: number;
     y: number;
+    tox?: number;
+    toy?: number;
     scale: number;
     rotate: number;
     rotateX: number;
@@ -27,14 +29,15 @@ const LetterForTitle = ({ letterParams }: LetterForTitleProps) => {
       }}
       animate={{
         opacity: 1,
-        x: 0,
-        y: 0,
+        x: letterParams.tox ? letterParams.tox : 0,
+        y: letterParams.toy ? letterParams.toy : 0,
         scale: 1,
         rotate: letterParams.rotate,
         rotateX: letterParams.rotateX,
         marginLeft: letterParams.marginLeft,
       }}
       transition={{ duration: 2 }}
+      className="text-white"
     >
       {letterParams.letter}
     </motion.div>
