@@ -10,7 +10,7 @@ const Title = () => {
             opacity: 0,
             x: -220,
             y: -0,
-            scale: 1,
+            scale: 0.7,
             rotate: 690,
             rotateX: 720,
           }}
@@ -22,7 +22,8 @@ const Title = () => {
             x: -200,
             y: -60,
             toy: -20,
-            scale: 1,
+            marginLeft: "-5px",
+            scale: 0.8,
             rotate: 1060,
             rotateX: 1080,
           }}
@@ -34,7 +35,8 @@ const Title = () => {
             x: -170,
             y: -110,
             toy: -33,
-            scale: 1,
+            scale: 0.85,
+            marginLeft: "-3px",
             rotate: 707,
             rotateX: 720,
           }}
@@ -45,8 +47,9 @@ const Title = () => {
             opacity: 0,
             x: -150,
             y: -150,
-            toy: -40,
-            scale: 1,
+            toy: -41,
+            marginLeft: "-3px",
+            scale: 0.9,
             rotate: -1088,
             rotateX: -360,
           }}
@@ -57,8 +60,8 @@ const Title = () => {
             opacity: 0,
             x: -100,
             y: -170,
-            toy: -46,
-            scale: 1,
+            toy: -47,
+            scale: 0.95,
             rotate: -726,
             rotateX: 360,
           }}
@@ -69,8 +72,9 @@ const Title = () => {
             opacity: 0,
             x: -50,
             y: -200,
-            toy: -49,
-            scale: 1,
+            toy: -50,
+            scale: 0.97,
+            marginLeft: "3px",
             rotate: 357,
             rotateX: 720,
           }}
@@ -81,8 +85,8 @@ const Title = () => {
             opacity: 0,
             x: -0,
             y: -220,
-            toy: -50,
-            scale: 1,
+            toy: -51,
+            scale: 1.01,
             rotate: 720,
             rotateX: -1080,
           }}
@@ -107,7 +111,7 @@ const Title = () => {
             x: 100,
             y: -170,
             toy: -46,
-            scale: 1,
+            scale: 0.95,
             rotate: -715,
             rotateX: 360,
           }}
@@ -119,7 +123,7 @@ const Title = () => {
             x: 150,
             y: -150,
             toy: -42,
-            scale: 1,
+            scale: 0.9,
             rotate: 369,
             rotateX: 720,
           }}
@@ -131,7 +135,8 @@ const Title = () => {
             x: 170,
             y: -110,
             toy: -33,
-            scale: 1,
+            scale: 0.85,
+            marginLeft: "-3px",
             rotate: 733,
             rotateX: -1080,
           }}
@@ -143,7 +148,8 @@ const Title = () => {
             x: 200,
             y: -60,
             toy: -20,
-            scale: 1,
+            scale: 0.8,
+            marginLeft: "-5px",
             rotate: -1060,
             rotateX: -720,
           }}
@@ -154,7 +160,8 @@ const Title = () => {
             opacity: 0,
             x: 220,
             y: 0,
-            scale: 1,
+            scale: 0.8,
+            marginLeft: "-7px",
             rotate: -690,
             rotateX: 360,
           }}
