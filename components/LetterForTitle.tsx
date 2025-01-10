@@ -26,6 +26,7 @@ const LetterForTitle = ({ letterParams }: LetterForTitleProps) => {
         rotate: 0,
         rotateX: 0,
         marginLeft: 0,
+        textShadow: "0px 0px 0px #000",
       }}
       animate={{
         opacity: 1,
@@ -35,6 +36,7 @@ const LetterForTitle = ({ letterParams }: LetterForTitleProps) => {
         rotate: letterParams.rotate,
         rotateX: letterParams.rotateX,
         marginLeft: letterParams.marginLeft,
+        textShadow: "3px 5px 2px #000",
       }}
       transition={{ duration: 2 }}
       className="text-white"
