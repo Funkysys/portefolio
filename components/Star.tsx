@@ -1,10 +1,12 @@
 import { motion } from "framer-motion";
 interface StarProps {
-  x: string; // Position horizontale
-  y: string; // Position verticale
+  x: string;
+  y: string;
+  small?: boolean;
+  hidden?: boolean;
 }
 
-export const Star = ({ x, y }: StarProps) => {
+export const Star = ({ x, y, small, hidden }: StarProps) => {
   return (
     <motion.div
       initial={{
@@ -18,11 +20,13 @@ export const Star = ({ x, y }: StarProps) => {
         scale: 1,
       }}
       transition={{ duration: 3 }}
-      className="absolute w-3 h-3 bg-yellow-400 rounded-full shadow-lg"
+      className={`absolute w-[0.8vw] h-[0.8vw] bg-yellow-400 rounded-full shadow-lg ${
+        hidden ? "hidden md:block" : ""
+      } ${small ? "block md:hidden" : ""}`}
       style={{
         left: x,
         top: y,
-        boxShadow: `0 0 6px 3px rgba(255, 255, 0, 0.6)`, // Ombre douce autour de l'étoile
+        boxShadow: `0 0 6px 3px rgba(255, 255, 0, 0.6)`,
       }}
     />
   );

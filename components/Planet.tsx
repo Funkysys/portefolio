@@ -1,19 +1,21 @@
 import { motion } from "framer-motion";
 
 interface PlanetProps {
-  size: string; // Taille de la planète
-  speed: number; // Vitesse de l'orbite
-  radius: number; // Rayon de l'orbite
+  size: string;
+  speed: number;
+  radius: number;
+  hidden?: boolean;
+  y?: number;
 }
 
-export const Planet = ({ size, speed, radius }: PlanetProps) => {
+export const Planet = ({ size, speed, radius, hidden, y }: PlanetProps) => {
   return (
     <motion.div
       initial={{
         opacity: 0.5,
         scale: 0.5,
         x: -radius,
-        y: 150,
+        y: y ? y : 200,
         boxShadow: "0px 0px 10px 5px rgba(0, 0, 0, 0)",
       }}
       animate={{
@@ -33,11 +35,13 @@ export const Planet = ({ size, speed, radius }: PlanetProps) => {
         delay: 2,
       }}
       style={{
-        width: size,
-        height: size,
+        width: `calc(${size} / 2)`,
+        height: `calc(${size} / 2)`,
         position: "absolute",
       }}
-      className="rounded-full bg-orange-500 shadow-lg"
+      className={`rounded-full bg-orange-500 shadow-lg ${
+        hidden ? "hidden md:block" : "md:hidden block"
+      }`}
     />
   );
 };

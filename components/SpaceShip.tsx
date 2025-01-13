@@ -2,11 +2,13 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 
 interface SpaceshipProps {
-  size: string; // Taille du vaisseau spatial
-  speed: number; // Vitesse de l'orbite
-  imgSize: number; // Taille de l'image du vaisseau spatial
-  radius: number; // Rayon de l'orbite
-  imageSrc: string; // URL de l'image du vaisseau spatial
+  size: string;
+  speed: number;
+  imgSize: number;
+  radius: number;
+  imageSrc: string;
+  hidden?: boolean;
+  y?: number;
 }
 
 export const Spaceship = ({
@@ -15,6 +17,8 @@ export const Spaceship = ({
   radius,
   imageSrc,
   imgSize,
+  hidden,
+  y,
 }: SpaceshipProps) => {
   return (
     <motion.div
@@ -22,25 +26,23 @@ export const Spaceship = ({
         opacity: 0.5,
         scale: 0.5,
         x: -radius,
-        y: -200,
-        rotate: -90, // Position de départ de la rotation
+        y: y ? y : -200,
+        rotate: -90,
       }}
       animate={{
-        opacity: [0.1, 1, 0.1], // Opacité varie entre 0.5 et 1
-        scale: [0.1, 1, 0.1], // L'échelle varie pour simuler la distance
-        x: [radius, -radius], // Déplacement horizontal de l'image
-        // Rotation complète sur l'axe Z pour simuler l'orbite
+        opacity: [0.1, 1, 0.1],
+        scale: [0.1, 1, 0.1],
+        x: [radius, -radius],
       }}
       transition={{
-        repeat: Infinity, // Répétition infinie de l'animation
-        duration: speed, // Durée de l'orbite
-        ease: "easeInOut", // Animation linéaire
+        repeat: Infinity,
+        duration: speed,
+        ease: "easeInOut",
       }}
       style={{
-        width: size,
-        height: size,
+        width: `calc(${size} / 2)`,
+        height: `calc(${size} / 2)`,
         position: "absolute",
-        transformOrigin: "center", // La rotation doit se faire autour du centre de l'orbite
       }}
     >
       <Image
@@ -48,7 +50,9 @@ export const Spaceship = ({
         alt="Vaisseau spatial"
         width={imgSize}
         height={imgSize}
-        className="w-full h-full object-contain"
+        className={`w-full h-full object-contain ${
+          hidden ? "hidden md:block" : "md:hidden block"
+        }`}
       />
     </motion.div>
   );
