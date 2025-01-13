@@ -4,9 +4,10 @@ interface StarProps {
   y: string;
   small?: boolean;
   hidden?: boolean;
+  scale?: number;
 }
 
-export const Star = ({ x, y, small, hidden }: StarProps) => {
+export const Star = ({ x, y, small, hidden, scale }: StarProps) => {
   return (
     <motion.div
       initial={{
@@ -17,7 +18,7 @@ export const Star = ({ x, y, small, hidden }: StarProps) => {
       }}
       animate={{
         opacity: 1,
-        scale: 1,
+        scale: scale || 1,
       }}
       transition={{ duration: 3 }}
       className={`absolute w-[0.8vw] h-[0.8vw] bg-yellow-400 rounded-full shadow-lg ${

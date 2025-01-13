@@ -15,6 +15,7 @@ export default {
       },
       colors: {
         "perso-bg": "#13182A",
+        "perso-bg2": "#132A14",
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
