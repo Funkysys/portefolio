@@ -203,6 +203,14 @@ const SolarSystem = () => {
                 >
                   En savoir plus
                 </button>
+                {hoveredPlanet !== null && (
+                  <button
+                    onClick={() => setHoveredPlanet(null)}
+                    className="mt-4 px-6 py-2 bg-white text-black rounded-md hover:bg-gray-200 transition-colors duration-200 z-[100]"
+                  >
+                    Fermer
+                  </button>
+                )}
               </div>
             </motion.div>
           </AnimatePresence>
@@ -213,14 +221,28 @@ const SolarSystem = () => {
           {showModal && (
             <div className="fixed inset-0 flex items-center justify-center z-[200]">
               <motion.div
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.8 }}
-                className="bg-black/80 p-8 rounded-lg max-w-2xl w-full mx-4 relative"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                className="absolute inset-0 bg-black/50"
+                onClick={() => {
+                  setShowModal(false);
+                  setHoveredPlanet(null);
+                }}
+              />
+              <motion.div
+                initial={{ scale: 0, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                exit={{ scale: 0, opacity: 0 }}
+                transition={{ type: "spring", duration: 0.5 }}
+                className="relative w-[90%] md:w-[80%] h-[80vh] bg-gray-900/80 backdrop-blur-sm rounded-xl p-8 text-white overflow-y-auto border border-white/20"
               >
                 <div className="text-white text-center">
                   <button
-                    onClick={() => setShowModal(false)}
+                    onClick={() => {
+                      setShowModal(false);
+                      setHoveredPlanet(null);
+                    }}
                     className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-white/10 hover:bg-white/20 p-2 rounded-full border border-white/20 transition-colors duration-200 group"
                   >
                     <svg 
@@ -275,7 +297,6 @@ const SolarSystem = () => {
               <motion.div
                 key={index}
                 className="absolute shadow-sm shadow-white"
-                
                 style={{
                   width: `${planetSize}vw`,
                   height: `${planetSize}vw`,
@@ -290,7 +311,6 @@ const SolarSystem = () => {
                   backgroundPosition: "center",
                 }}
                 onMouseEnter={() => setHoveredPlanet(index)}
-                onMouseLeave={() => setHoveredPlanet(null)}
               >
                 {planet.name}
               </motion.div>
