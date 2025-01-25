@@ -2,6 +2,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { useState, useEffect } from "react";
 import { Star } from "./Star";
 import Link from "next/link";
+import RealisationPortrait from "./RealisationPortrait";
 
 type PlanetContent = {
   title: string;
@@ -13,15 +14,19 @@ type PlanetContent = {
 
 const SolarSystem = () => {
   const [hoveredPlanet, setHoveredPlanet] = useState<number | null>(null);
-  const [screenWidth, setScreenWidth] = useState(1024); // valeur par défaut
+  const [screenWidth, setScreenWidth] = useState(1024);
+  const [screenHeight, setScreenHeight] = useState(768);
   const [showModal, setShowModal] = useState(false);
+  const [isLandscape, setIsLandscape] = useState(true);
 
   useEffect(() => {
     const handleResize = () => {
       setScreenWidth(window.innerWidth);
+      setScreenHeight(window.innerHeight);
+      setIsLandscape(window.innerWidth > window.innerHeight);
     };
 
-    // Set initial width
+    // Set initial dimensions
     handleResize();
 
     // Add event listener
@@ -30,6 +35,10 @@ const SolarSystem = () => {
     // Cleanup
     return () => window.removeEventListener('resize', handleResize);
   }, []);
+
+  if (!isLandscape) {
+    return <RealisationPortrait />;
+  }
 
   const planets: Array<{
     name: string;
