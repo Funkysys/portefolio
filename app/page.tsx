@@ -90,7 +90,7 @@ export default function Home() {
           y: contactY,
         }}
       >
-        <div className="w-full h-full bg-black/60 backdrop-blur-sm">
+        <div className="w-full h-full bg-black/60 backdrop-blur-sm mb-[50vh]">
           <Contact />
         </div>
       </motion.div>
