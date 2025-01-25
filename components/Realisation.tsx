@@ -14,9 +14,6 @@ type PlanetContent = {
 const SolarSystem = () => {
   const [hoveredPlanet, setHoveredPlanet] = useState<number | null>(null);
   const [screenWidth, setScreenWidth] = useState(1024); // valeur par défaut
-  const [isHovered, setIsHovered] = useState(false);
-  const [showOverlay, setShowOverlay] = useState(false);
-  const [showCentralContent, setShowCentralContent] = useState(false);
   const [showModal, setShowModal] = useState(false);
 
   useEffect(() => {
