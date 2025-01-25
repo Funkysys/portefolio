@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import { Star } from "./Star";
 import Link from "next/link";
 
 const Contact = () => {
