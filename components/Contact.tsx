@@ -31,10 +31,6 @@ const Contact = () => {
     <div className="relative w-[100vw] h-[100vh] overflow-y-auto">
       <div className="absolute inset-0 bg-black/40 backdrop-blur-md" />
       <div className="relative z-10 container mx-auto px-4 py-16">
-        {/* Étoiles - réduites car déjà présentes dans la page principale */}
-        <Star x="25%" y="12%" hidden scale={0.8} />
-        <Star x="75%" y="42%" small scale={0.4} />
-        <Star x="48%" y="78%" small scale={0.4} />
 
         <motion.div
           initial={{ opacity: 0 }}
