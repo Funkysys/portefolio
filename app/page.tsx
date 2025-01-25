@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { Circle } from "@/components/Circle";
 import { Planet } from "@/components/Planet";
 import Realisation from "@/components/Realisation";
