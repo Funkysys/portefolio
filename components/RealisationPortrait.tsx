@@ -110,15 +110,9 @@ const RealisationPortrait = () => {
       <Star x="82%" y="83%" hidden scale={0.6} />
       <Star x="94%" y="79%" small scale={0.4} />
 
-      {/* Titre principal */}
-      <motion.h2 
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        className="text-3xl font-bold text-white text-center mb-12 relative z-10"
-      >
-        {currentContent.title}
-      </motion.h2>
-      
+      {/* Espace en haut */}
+      <div className="h-24" /> {/* Ajustez la hauteur (h-24 = 6rem) selon vos besoins */}
+
       {/* Container des planètes */}
       <div className="flex flex-col items-center gap-16 w-full px-4 relative">
         {projects.map((project, index) => {

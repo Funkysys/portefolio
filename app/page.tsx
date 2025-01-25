@@ -1,27 +1,29 @@
 "use client";
 
+import Image from "next/image";
 import { Circle } from "@/components/Circle";
 import { Planet } from "@/components/Planet";
 import Realisation from "@/components/Realisation";
 import { Spaceship } from "@/components/SpaceShip";
 import { Star } from "@/components/Star";
 import Title from "@/components/Title";
+import Contact from "@/components/Contact";
 import { motion, useScroll, useTransform } from "framer-motion";
 
 export default function Home() {
-  // Utilisation de useScroll pour obtenir la position du scroll
   const { scrollYProgress } = useScroll();
 
-  // Transformation de la position du scroll en opacité pour chaque section
-  const firstSectionOpacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]); // Première section disparaît
-  const secondSectionOpacity = useTransform(scrollYProgress, [0.5, 1], [0, 1]); // Deuxième section apparaît après que la première ait disparu
+  const firstSectionOpacity = useTransform(scrollYProgress, [0, 0.15], [1, 0]);
+  const secondSectionOpacity = useTransform(scrollYProgress, [0.1, 0.15], [0, 1]);
+  const contactY = useTransform(scrollYProgress, [0.9, 0.95], ["100%", "0%"]);
+  const contactOpacity = useTransform(scrollYProgress, [0.9, 0.93], [0, 1]);
 
   return (
-    <main className="flex w-full h-[200vh] min-h-screen flex-col gap-8 bg-perso-bg">
+    <main className="flex w-full h-[220vh] min-h-screen flex-col gap-8 bg-perso-bg">
       {/* Première section */}
       <div className="flex w-full h-screen flex-col gap-8 justify-center items-center">
         <motion.div
-          className="relative flex w-full h-full flex-col gap-8 justify-center items-center font-roboto"
+          className="relative flex w-full h-full flex-col gap-8 justify-center items-center font-roboto my-[40vh]"
           style={{
             opacity: firstSectionOpacity,
           }}
@@ -68,12 +70,25 @@ export default function Home() {
 
       {/* Deuxième section */}
       <motion.div
-        className=""
+        className="relative z-0 mb-[50vh]"
         style={{
           opacity: secondSectionOpacity,
         }}
       >
         <Realisation />
+      </motion.div>
+
+      {/* Section Contact avec effet de superposition */}
+      <motion.div
+        className="fixed top-0 left-0 w-[100vw] h-[100vh] z-50"
+        style={{
+          opacity: contactOpacity,
+          y: contactY,
+        }}
+      >
+        <div className="w-full h-full bg-black/60 backdrop-blur-sm">
+          <Contact />
+        </div>
       </motion.div>
     </main>
   );
