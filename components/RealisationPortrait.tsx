@@ -1,5 +1,5 @@
 import { AnimatePresence, motion } from "framer-motion";
-import { useState, useMemo } from "react";
+import { useState } from "react";
 import Link from "next/link";
 import { Star } from "./Star";
 
@@ -14,24 +14,6 @@ type PlanetContent = {
 const RealisationPortrait = () => {
   const [selectedProject, setSelectedProject] = useState<number | null>(null);
   const [showModal, setShowModal] = useState(false);
-
-  // Générer les étoiles de manière aléatoire mais stable (grâce à useMemo)
-  const stars = useMemo(() => {
-    const numberOfStars = 30; // Nombre total d'étoiles
-    const stars = [];
-    
-    for (let i = 0; i < numberOfStars; i++) {
-      const x = `${Math.random() * 100}%`;
-      const y = `${Math.random() * 100}%`;
-      const scale = 0.3 + Math.random() * 0.7; // Scale entre 0.3 et 1
-      const isHidden = Math.random() > 0.5; // 50% de chance d'être hidden
-      const isSmall = Math.random() > 0.7; // 30% de chance d'être small
-      
-      stars.push({ x, y, scale, hidden: isHidden, small: isSmall });
-    }
-    
-    return stars;
-  }, []); // Le tableau vide signifie que ce calcul ne sera fait qu'une seule fois
 
   const projects = [
     {

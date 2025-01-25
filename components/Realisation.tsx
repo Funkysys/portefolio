@@ -15,14 +15,12 @@ type PlanetContent = {
 const SolarSystem = () => {
   const [hoveredPlanet, setHoveredPlanet] = useState<number | null>(null);
   const [screenWidth, setScreenWidth] = useState(1024);
-  const [screenHeight, setScreenHeight] = useState(768);
   const [showModal, setShowModal] = useState(false);
   const [isLandscape, setIsLandscape] = useState(true);
 
   useEffect(() => {
     const handleResize = () => {
       setScreenWidth(window.innerWidth);
-      setScreenHeight(window.innerHeight);
       setIsLandscape(window.innerWidth > window.innerHeight);
     };
 
