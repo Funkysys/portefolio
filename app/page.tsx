@@ -7,15 +7,20 @@ import { Spaceship } from "@/components/SpaceShip";
 import { Star } from "@/components/Star";
 import Title from "@/components/Title";
 import Contact from "@/components/Contact";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useTransform, useSpring } from "framer-motion";
 
 export default function Home() {
   const { scrollYProgress } = useScroll();
+  const smoothProgress = useSpring(scrollYProgress, {
+    stiffness: 50,
+    damping: 15,
+    restDelta: 0.001
+  });
 
-  const firstSectionOpacity = useTransform(scrollYProgress, [0, 0.15], [1, 0]);
-  const secondSectionOpacity = useTransform(scrollYProgress, [0.1, 0.15], [0, 1]);
-  const contactY = useTransform(scrollYProgress, [0.9, 0.95], ["100%", "0%"]);
-  const contactOpacity = useTransform(scrollYProgress, [0.9, 0.93], [0, 1]);
+  const firstSectionOpacity = useTransform(smoothProgress, [0, 0.15], [1, 0]);
+  const secondSectionOpacity = useTransform(smoothProgress, [0.1, 0.15], [0, 1]);
+  const contactY = useTransform(smoothProgress, [0.85, 0.95], ["100%", "0%"]);
+  const contactOpacity = useTransform(smoothProgress, [0.85, 0.92], [0, 1]);
 
   return (
     <main className="flex w-full h-[220vh] min-h-screen flex-col gap-8 bg-perso-bg">
