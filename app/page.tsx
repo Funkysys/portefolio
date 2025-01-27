@@ -23,7 +23,7 @@ export default function Home() {
   const contactOpacity = useTransform(smoothProgress, [0.85, 0.92], [0, 1]);
 
   return (
-    <main className="flex w-full h-[220vh] min-h-screen flex-col gap-8 bg-perso-bg">
+    <main className="flex w-full h-[270vh] md:h-[220vh] min-h-screen flex-col gap-8 bg-perso-bg">
       {/* Première section */}
       <div className="flex w-full min-h-screen flex-col gap-8 justify-center items-center">
         <motion.div
