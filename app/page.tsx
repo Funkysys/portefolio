@@ -25,9 +25,9 @@ export default function Home() {
   return (
     <main className="flex w-full h-[220vh] min-h-screen flex-col gap-8 bg-perso-bg">
       {/* Première section */}
-      <div className="flex w-full h-screen flex-col gap-8 justify-center items-center">
+      <div className="flex w-full min-h-screen flex-col gap-8 justify-center items-center">
         <motion.div
-          className="relative flex w-full h-full flex-col gap-8 justify-center items-center font-roboto my-[40vh]"
+          className="relative flex w-full h-full flex-col gap-8 justify-center items-center font-roboto md:my-[40vh] "
           style={{
             opacity: firstSectionOpacity,
           }}
@@ -90,7 +90,7 @@ export default function Home() {
           y: contactY,
         }}
       >
-        <div className="w-full h-full bg-black/60 backdrop-blur-sm mb-[50vh]">
+        <div className="w-full h-full bg-black/60 backdrop-blur-sm">
           <Contact />
         </div>
       </motion.div>
