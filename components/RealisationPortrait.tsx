@@ -17,44 +17,69 @@ const RealisationPortrait = () => {
 
   const projects = [
     {
-      name: "1",
-      color: "purple",
-      description: "Planète 1 - Description détaillée.",
-      image: "url('/images/stage.png')",
-      link: "https://stage.funkysys.fr",
-      size: 20, // taille en vw
-    },
-    {
-      name: "2",
+      name: "Spinosor Records",
+      baseSize: 10,
+      orbitMultiplier: 1.4,
+      speed: 15,
+      size: 20,
+      z: 90,
       color: "blue",
-      description: "Planète 2 - Description détaillée.",
+      description:
+        "Développement Fullstack d'un site web en NextJS pour la promotion d'artistes du Label Spinosor Records et l'écoute de musique.",
       image: "url('/images/1.png')",
-      link: "https://1.funkysys.fr",
-      size: 18,
+      link: "https://spinosor-records.eu/",
     },
     {
-      name: "3",
-      color: "orange",
-      description: "Planète 3 - Description détaillée.",
-      image: "url('/images/discophiles.png')",
-      link: "https://discophiles.funkysys.fr",
-      size: 22,
-    },
-    {
-      name: "4",
-      color: "green",
-      description: "Planète 4 - Description détaillée.",
-      image: "url('/images/planet4.jpg')",
-      link: "https://planet4.funkysys.fr",
-      size: 16,
-    },
-    {
-      name: "5",
+      name: "Quai-Antique",
+      baseSize: 10,
+      orbitMultiplier: 1.55,
+      speed: 30,
+      z: 60,
       color: "yellow",
-      description: "Planète 5 - Description détaillée.",
-      image: "url('/images/planet5.jpg')",
-      link: "https://planet5.funkysys.fr",
+      size: 18,
+      description:
+        "Réalisation d'un site vitrine pour mon titre RNCP de développeur web et web mobile représentant un faux restaurant en Symphony et NextJS.",
+      image: "url('/images/quai-antique.png')",
+      link: "https://quai-antique-front.vercel.app/",
+    },
+    {
+      name: "Alter Nativ Publishing",
+      baseSize: 9,
+      orbitMultiplier: 1.5,
+      speed: 25,
+      z: 70,
+      size: 22,
+      color: "green",
+      description:
+        "Développement de la partie Frontend pour une édition musicale.",
+      image: "url('/images/alter_nativ.png')",
+      link: "https://alternativpublishing.com",
+    },
+    {
+      name: "Discophiles_blog",
+      baseSize: 8,
+      orbitMultiplier: 1.45,
+      speed: 20,
+      size: 16,
+      z: 80,
+      color: "orange",
+      description:
+        "Développement d'un blog en NextJS pour les passionnés de musique. Partage d'albums et de critiques.",
+      image: "url('/images/discophiles.png')",
+      link: "https://www.discophiles-blog.eu/",
+    },
+    {
+      name: "Stage Musical du Lot",
+      baseSize: 8, // Augmentation de la taille de base
+      orbitMultiplier: 1.35,
+      speed: 10,
+      z: 100,
       size: 19,
+      color: "purple",
+      description:
+        "Développement d'un site vitrine static pour un stage d'improvisation en NextJs.",
+      image: "url('/images/stage2.png')",
+      link: "https://stagemusicaldulot.fr",
     },
   ];
 
