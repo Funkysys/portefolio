@@ -1,8 +1,8 @@
 import { AnimatePresence, motion } from "framer-motion";
-import { useState, useEffect } from "react";
-import { Star } from "./Star";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 import RealisationPortrait from "./RealisationPortrait";
+import { Star } from "./Star";
 
 type PlanetContent = {
   title: string;
@@ -28,10 +28,10 @@ const SolarSystem = () => {
     handleResize();
 
     // Add event listener
-    window.addEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
 
     // Cleanup
-    return () => window.removeEventListener('resize', handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   if (!isLandscape) {
@@ -50,59 +50,64 @@ const SolarSystem = () => {
     link: string;
   }> = [
     {
-      name: "1",
-      baseSize: 10, // Augmentation de la taille de base
-      orbitMultiplier: 1.35, 
-      speed: 10,
-      z: 100,
-      color: "purple",
-      description: "Planète 1 - Description détaillée.",
-      image: "url('/images/stage.png')",
-      link: "https://stage.funkysys.fr"
-    },
-    {
-      name: "2",
+      name: "Spinosor Records",
       baseSize: 10,
-      orbitMultiplier: 1.4, 
+      orbitMultiplier: 1.4,
       speed: 15,
       z: 90,
       color: "blue",
-      description: "Planète 2 - Description détaillée.",
+      description:
+        "Développement Fullstack d'un site web en NextJS pour la promotion d'artistes du Label Spinosor Records et l'écoute de musique.",
       image: "url('/images/1.png')",
-      link: "https://1.funkysys.fr"
+      link: "https://1.funkysys.fr",
     },
     {
-      name: "3",
-      baseSize: 9,
-      orbitMultiplier: 1.45,
-      speed: 20,
-      z: 80,
-      color: "orange",
-      description: "Planète 3 - Description détaillée.",
-      image: "url('/images/discophiles.png')",
-      link: "https://discophiles.funkysys.fr"
-    },
-    {
-      name: "4",
-      baseSize: 8,
-      orbitMultiplier: 1.5,
-      speed: 25,
-      z: 70,
-      color: "green",
-      description: "Planète 4 - Description détaillée.",
-      image: "url('/images/planet4.jpg')",
-      link: "https://planet4.funkysys.fr"
-    },
-    {
-      name: "5",
-      baseSize: 7,
+      name: "Quai-Antique",
+      baseSize: 10,
       orbitMultiplier: 1.55,
       speed: 30,
       z: 60,
       color: "yellow",
-      description: "Planète 5 - Description détaillée.",
-      image: "url('/images/planet5.jpg')",
-      link: "https://planet5.funkysys.fr"
+      description:
+        "Réalisation d'un site vitrine pour mon titre RNCP de développeur web et web mobile représentant un faux restaurant en Symphony et NextJS.",
+      image: "url('/images/quai-antique.png')",
+      link: "https://quai-antique-front.vercel.app/",
+    },
+    {
+      name: "Alter Nativ Publishing",
+      baseSize: 9,
+      orbitMultiplier: 1.5,
+      speed: 25,
+      z: 70,
+      color: "green",
+      description:
+        "Développement de la partie Frontend pour une édition musicale.",
+      image: "url('/images/alter_nativ.png')",
+      link: "https://alternativpublishing.com",
+    },
+    {
+      name: "Discophiles_blog",
+      baseSize: 8,
+      orbitMultiplier: 1.45,
+      speed: 20,
+      z: 80,
+      color: "orange",
+      description:
+        "Développement d'un blog en NextJS pour les passionnés de musique. Partage d'albums et de critiques.",
+      image: "url('/images/discophiles.png')",
+      link: "https://discophiles_blog.eu",
+    },
+    {
+      name: "Stage Musical du Lot",
+      baseSize: 8, // Augmentation de la taille de base
+      orbitMultiplier: 1.35,
+      speed: 10,
+      z: 100,
+      color: "purple",
+      description:
+        "Développement d'un site vitrine static pour un stage d'improvisation en NextJs.",
+      image: "url('/images/stage2.png')",
+      link: "https://stage.funkysys.fr",
     },
   ];
 
@@ -117,7 +122,7 @@ const SolarSystem = () => {
   const currentContent: PlanetContent =
     hoveredPlanet !== null
       ? {
-          title: `Planète ${planets[hoveredPlanet].name}`,
+          title: `${planets[hoveredPlanet].name}`,
           description: planets[hoveredPlanet].description,
           color: planets[hoveredPlanet].color,
           image: planets[hoveredPlanet].image,
@@ -126,16 +131,16 @@ const SolarSystem = () => {
       : defaultContent;
 
   const getOrbitDistance = (screenWidth: number, orbitMultiplier: number) => {
-    let centralPlanetSize = 50; 
-    if (screenWidth >= 768) centralPlanetSize = 50; 
-    if (screenWidth >= 1024) centralPlanetSize = 40; 
-    if (screenWidth >= 1280) centralPlanetSize = 28; 
+    let centralPlanetSize = 50;
+    if (screenWidth >= 768) centralPlanetSize = 50;
+    if (screenWidth >= 1024) centralPlanetSize = 40;
+    if (screenWidth >= 1280) centralPlanetSize = 28;
 
     return (centralPlanetSize / 2) * orbitMultiplier;
   };
 
   return (
-    <div className="relative w-full h-screen flex justify-center items-center overflow-hidden">
+    <div className="relative w-full h-screen flex justify-center items-center overflow-hidden font-ruda">
       {/* Étoiles */}
       <Star x="10%" y="8%" hidden scale={0.9} />
       <Star x="26%" y="17%" hidden scale={0.8} />
@@ -167,7 +172,7 @@ const SolarSystem = () => {
           className="w-[50vw] h-[50vw] md:w-[40vw] md:h-[40vw] lg:w-[30vw] lg:h-[30vw] xl:w-[25vw] xl:h-[25vw] bg-blue-500 rounded-full absolute flex flex-col justify-center items-center text-center border-4 border-sky-900 shadow-md shadow-white"
           style={{
             zIndex: 50,
-            position: 'relative'
+            position: "relative",
           }}
         >
           <AnimatePresence mode="wait">
@@ -198,23 +203,25 @@ const SolarSystem = () => {
               style={{ zIndex: 51 }}
             >
               <div className="relative bg-black/40 w-full h-full rounded-full flex flex-col justify-center items-center">
-                <h3 className="text-2xl md:text-3xl font-bold text-white">
-                  {currentContent.title}
-                </h3>
-                <button
-                  onClick={() => setShowModal(true)}
-                  className="mt-4 px-6 py-2 bg-white text-black rounded-md hover:bg-gray-200 transition-colors duration-200"
-                >
-                  En savoir plus
-                </button>
-                {hoveredPlanet !== null && (
+                <div className="flex flex-col justify-center items-center bg-black/70 rounded-xl py-8 px-16 text-white overflow-y-auto border border-white/20">
+                  <h3 className="text-2xl md:text-3xl font-bold text-white font-belleza">
+                    {currentContent.title}
+                  </h3>
                   <button
-                    onClick={() => setHoveredPlanet(null)}
-                    className="mt-4 px-6 py-2 bg-white text-black rounded-md hover:bg-gray-200 transition-colors duration-200 z-[100]"
+                    onClick={() => setShowModal(true)}
+                    className="mt-4 px-6 py-2 bg-white text-black rounded-md hover:bg-gray-200 transition-colors duration-200"
                   >
-                    Fermer
+                    En savoir plus
                   </button>
-                )}
+                  {hoveredPlanet !== null && (
+                    <button
+                      onClick={() => setHoveredPlanet(null)}
+                      className="mt-4 px-6 py-2 bg-white text-black rounded-md hover:bg-gray-200 transition-colors duration-200 z-[100]"
+                    >
+                      Fermer
+                    </button>
+                  )}
+                </div>
               </div>
             </motion.div>
           </AnimatePresence>
@@ -239,35 +246,44 @@ const SolarSystem = () => {
                 animate={{ scale: 1, opacity: 1 }}
                 exit={{ scale: 0, opacity: 0 }}
                 transition={{ type: "spring", duration: 0.5 }}
-                className="relative w-[90%] md:w-[80%] h-[80vh] bg-gray-900/80 backdrop-blur-sm rounded-xl p-8 text-white overflow-y-auto border border-white/20"
+                className="relative w-[90%] md:w-[40%] h-[30vh] sm:h-[40vh] flex flex-col justify-center items-center bg-gray-900/80 backdrop-blur-sm rounded-xl p-8 text-white overflow-y-auto border border-white/20"
               >
-                <div className="text-white text-center">
-                  <button
-                    onClick={() => {
-                      setShowModal(false);
-                      setHoveredPlanet(null);
-                    }}
-                    className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-white/10 hover:bg-white/20 p-2 rounded-full border border-white/20 transition-colors duration-200 group"
-                  >
-                    <svg 
-                      xmlns="http://www.w3.org/2000/svg" 
-                      className="h-6 w-6 transform rotate-0 group-hover:rotate-180 transition-transform duration-300" 
-                      fill="none" 
-                      viewBox="0 0 24 24" 
-                      stroke="currentColor"
+                <div className="flex flex-col justify-center items-center bg-black/50 rounded-xl p-8 text-white overflow-y-auto border border-white/20">
+                  <div className="text-white text-center">
+                    <button
+                      onClick={() => {
+                        setShowModal(false);
+                        setHoveredPlanet(null);
+                      }}
+                      className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-white/10 hover:bg-white/20 p-2 rounded-full border border-white/20 transition-colors duration-200 group"
                     >
-                      <path 
-                        strokeLinecap="round" 
-                        strokeLinejoin="round" 
-                        strokeWidth={2} 
-                        d="M19 9l-7 7-7-7" 
-                      />
-                    </svg>
-                  </button>
-                  <h2 className="text-3xl font-bold mb-6">{currentContent.title}</h2>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="h-6 w-6 transform rotate-0 group-hover:rotate-180 transition-transform duration-300"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M19 9l-7 7-7-7"
+                        />
+                      </svg>
+                    </button>
+                  </div>
+                  <h2 className="text-3xl font-bold mb-6">
+                    {currentContent.title}
+                  </h2>
                   <p className="text-lg mb-16">{currentContent.description}</p>
                   {currentContent.link && (
-                    <Link href={currentContent.link} target="_blank" rel="noopener noreferrer" className="text-lg text-blue-500 hover:text-blue-700 transition-colors duration-200">
+                    <Link
+                      href={currentContent.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-lg border-2 px-3 py-2 rounded-md bg-yellow-400 text-cyan-950 hover:text-cyan-200 hover:bg-yellow-800 transition-colors duration-200"
+                    >
                       Visiter le site
                     </Link>
                   )}
@@ -278,24 +294,31 @@ const SolarSystem = () => {
         </AnimatePresence>
 
         {/* Conteneur des orbites */}
-        <motion.div 
-          className="absolute inset-0 flex items-center justify-center" 
+        <motion.div
+          className="absolute inset-0 flex items-center justify-center"
           style={{ zIndex: 2 }}
           animate={{
-            rotate: 360
+            rotate: 360,
           }}
           transition={{
             repeat: Infinity,
             duration: 20,
-            ease: "linear"
+            ease: "linear",
           }}
         >
           {planets.map((planet, index) => {
-            const orbitDistance = getOrbitDistance(screenWidth, planet.orbitMultiplier);
-            const sizeScale = screenWidth < 640 ? 1.5 : // Augmentation de l'échelle sur mobile
-                             screenWidth < 1024 ? 1.5 : 1;
+            const orbitDistance = getOrbitDistance(
+              screenWidth,
+              planet.orbitMultiplier
+            );
+            const sizeScale =
+              screenWidth < 640
+                ? 1.5 // Augmentation de l'échelle sur mobile
+                : screenWidth < 1024
+                ? 1.5
+                : 1;
             const planetSize = planet.baseSize * sizeScale;
-            const angle = (index * (360 / planets.length)) * (Math.PI / 180);
+            const angle = index * (360 / planets.length) * (Math.PI / 180);
 
             return (
               <motion.div

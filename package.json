@@ -2,6 +2,21 @@
   "name": "portefolio",
   "version": "0.1.0",
   "private": true,
+  "description": "Portfolio personnel présentant mes projets et compétences en développement web",
+  "author": "Adel Aabid",
+  "license": "MIT",
+  "keywords": [
+    "portfolio",
+    "react",
+    "nextjs",
+    "typescript",
+    "tailwindcss",
+    "framer-motion"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Funkysys/portefolio"
+  },
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
