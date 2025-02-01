@@ -95,7 +95,7 @@ const SolarSystem = () => {
       description:
         "Développement d'un blog en NextJS pour les passionnés de musique. Partage d'albums et de critiques.",
       image: "url('/images/discophiles.png')",
-      link: "https://discophiles_blog.eu",
+      link: "https://www.discophiles-blog.eu/",
     },
     {
       name: "Stage Musical du Lot",
