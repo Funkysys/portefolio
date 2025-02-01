@@ -165,7 +165,8 @@ const Contact = () => {
         >
           <p className="text-lg text-gray-300 mb-6">
             Vous avez un projet en tête ? N&apos;hésitez pas à me contacter pour
-            en discuter !
+            en discuter ! (réduction pour les projets de site pour la création
+            artistique)
           </p>
           <Link
             href="mailto:votre@email.com"
