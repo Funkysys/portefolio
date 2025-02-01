@@ -1,24 +1,28 @@
 "use client";
 
 import { Circle } from "@/components/Circle";
+import Contact from "@/components/Contact";
 import { Planet } from "@/components/Planet";
 import Realisation from "@/components/Realisation";
 import { Spaceship } from "@/components/SpaceShip";
 import { Star } from "@/components/Star";
 import Title from "@/components/Title";
-import Contact from "@/components/Contact";
-import { motion, useScroll, useTransform, useSpring } from "framer-motion";
+import { motion, useScroll, useSpring, useTransform } from "framer-motion";
 
 export default function Home() {
   const { scrollYProgress } = useScroll();
   const smoothProgress = useSpring(scrollYProgress, {
     stiffness: 50,
     damping: 15,
-    restDelta: 0.001
+    restDelta: 0.001,
   });
 
   const firstSectionOpacity = useTransform(smoothProgress, [0, 0.15], [1, 0]);
-  const secondSectionOpacity = useTransform(smoothProgress, [0.1, 0.15], [0, 1]);
+  const secondSectionOpacity = useTransform(
+    smoothProgress,
+    [0.1, 0.15],
+    [0, 1]
+  );
   const contactY = useTransform(smoothProgress, [0.85, 0.95], ["100%", "0%"]);
   const contactOpacity = useTransform(smoothProgress, [0.85, 0.92], [0, 1]);
 
@@ -74,7 +78,7 @@ export default function Home() {
 
       {/* Deuxième section */}
       <motion.div
-        className="relative z-0 mb-[50vh]"
+        className="relative z-0 mb-[70vh]"
         style={{
           opacity: secondSectionOpacity,
         }}
