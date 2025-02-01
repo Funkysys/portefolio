@@ -59,7 +59,7 @@ const SolarSystem = () => {
       description:
         "Développement Fullstack d'un site web en NextJS pour la promotion d'artistes du Label Spinosor Records et l'écoute de musique.",
       image: "url('/images/1.png')",
-      link: "https://1.funkysys.fr",
+      link: "https://spinosor-records.eu/",
     },
     {
       name: "Quai-Antique",
@@ -107,7 +107,7 @@ const SolarSystem = () => {
       description:
         "Développement d'un site vitrine static pour un stage d'improvisation en NextJs.",
       image: "url('/images/stage2.png')",
-      link: "https://stage.funkysys.fr",
+      link: "https://stagemusicaldulot.fr",
     },
   ];
 
