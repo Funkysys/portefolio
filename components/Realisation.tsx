@@ -69,7 +69,7 @@ const SolarSystem = () => {
       z: 60,
       color: "yellow",
       description:
-        "Réalisation d'un site vitrine pour mon titre RNCP de développeur web et web mobile représentant un faux restaurant en Symphony et NextJS.",
+        "Réalisation d'un site vitrine pour mon titre RNCP de développeur web et web mobile représentant un faux restaurant en Symphony et NextJS. Il devait contenir la possibilité de réserver une table, de consulter le menu et de contacter le restaurant. J'y ai rajouter la possibilité pour l'utilisateur la possibilité d'enregistrer ses allergies pour mettre à jour la carte en fonction de ses restrictions alimentaires.",
       image: "url('/images/quai-antique.png')",
       link: "https://quai-antique-front.vercel.app/",
     },
@@ -81,7 +81,7 @@ const SolarSystem = () => {
       z: 70,
       color: "green",
       description:
-        "Développement de la partie Frontend pour une édition musicale.",
+        "Développement de la partie Frontend pour une édition musicale. Le défi était de créer un player spécifique contenant des markers et des régions clickable et configurables à souhait pour les clients ainsi qu'un système de recherche personnalisé",
       image: "url('/images/alter_nativ.png')",
       link: "https://alternativpublishing.com",
     },
@@ -114,7 +114,7 @@ const SolarSystem = () => {
   const defaultContent: PlanetContent = {
     title: "Mes Réalisations",
     description:
-      "Découvrez mes projets interactifs et immersifs, créés avec passion et expertise pour vous offrir des expériences uniques.",
+      "Découvrez mes projets interactifs et immersifs, créés avec passion et expertise pour vous offrir des expériences obtimales.",
     color: "transparent",
     image: "url('/images/default-bg.jpg')",
   };
