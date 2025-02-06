@@ -160,13 +160,6 @@ const SolarSystem = () => {
       <Star x="87%" y="92%" hidden scale={0.8} />
 
       <div className="w-full h-full relative flex items-center justify-center">
-        <Star x="10%" y="10%" />
-        <Star x="20%" y="90%" />
-        <Star x="80%" y="20%" />
-        <Star x="85%" y="85%" />
-        <Star x="15%" y="50%" scale={0.7} />
-        <Star x="90%" y="15%" hidden scale={0.7} />
-        <Star x="87%" y="92%" hidden scale={0.8} />
 
         <div
           className="w-[50vw] h-[50vw] md:w-[40vw] md:h-[40vw] lg:w-[30vw] lg:h-[30vw] xl:w-[25vw] xl:h-[25vw] bg-blue-500 rounded-full absolute flex flex-col justify-center items-center text-center border-4 border-sky-900 shadow-md shadow-white"
@@ -203,24 +196,26 @@ const SolarSystem = () => {
               style={{ zIndex: 51 }}
             >
               <div className="relative bg-black/40 w-full h-full rounded-full flex flex-col justify-center items-center">
-                <div className="flex flex-col justify-center items-center bg-black/70 rounded-xl py-8 px-16 text-white overflow-y-auto border border-white/20">
+                <div className="flex flex-col justify-center items-center bg-black/70 w-full h-full rounded-full py-8 px-16 text-white overflow-y-auto border border-white/20">
                   <h3 className="text-2xl md:text-3xl font-bold text-white font-belleza">
                     {currentContent.title}
                   </h3>
+                  <div className="flex justify-center items-center mt-4">
                   <button
                     onClick={() => setShowModal(true)}
-                    className="mt-4 px-6 py-2 bg-white text-black rounded-md hover:bg-gray-200 transition-colors duration-200"
-                  >
-                    En savoir plus
+                    className="mt-4 px-4 py-1  bg-cyan-600 hover:bg-cyan-800 rounded-md transition-colors duration-200 mx-2 border border-white/20"
+                    >
+                    Voir +
                   </button>
                   {hoveredPlanet !== null && (
                     <button
-                      onClick={() => setHoveredPlanet(null)}
-                      className="mt-4 px-6 py-2 bg-white text-black rounded-md hover:bg-gray-200 transition-colors duration-200 z-[100]"
+                    onClick={() => setHoveredPlanet(null)}
+                    className="mt-4 px-4 py-1 bg-amber-600 hover:bg-amber-800 text-white rounded-md transition-colors duration-200 z-[100] border border-white/20"
                     >
                       Fermer
                     </button>
                   )}
+                  </div>
                 </div>
               </div>
             </motion.div>
@@ -246,9 +241,8 @@ const SolarSystem = () => {
                 animate={{ scale: 1, opacity: 1 }}
                 exit={{ scale: 0, opacity: 0 }}
                 transition={{ type: "spring", duration: 0.5 }}
-                className="relative w-[90%] md:w-[40%] h-[30vh] sm:h-[40vh] flex flex-col justify-center items-center bg-gray-900/80 backdrop-blur-sm rounded-xl p-8 text-white overflow-y-auto border border-white/20"
+                className="relative w-[90vw] md:w-[70vw] h-[70vh] sm:h-[50vh] flex flex-col justify-center items-center bg-gray-900/80 backdrop-blur-sm rounded-xl p-8 text-white overflow-y-auto border border-white/20 text-center"
               >
-                <div className="flex flex-col justify-center items-center bg-black/50 rounded-xl p-8 text-white overflow-y-auto border border-white/20">
                   <div className="text-white text-center">
                     <button
                       onClick={() => {
@@ -287,7 +281,6 @@ const SolarSystem = () => {
                       Visiter le site
                     </Link>
                   )}
-                </div>
               </motion.div>
             </div>
           )}
@@ -338,9 +331,7 @@ const SolarSystem = () => {
                   backgroundPosition: "center",
                 }}
                 onMouseEnter={() => setHoveredPlanet(index)}
-              >
-                {planet.name}
-              </motion.div>
+              />
             );
           })}
         </motion.div>

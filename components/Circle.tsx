@@ -19,7 +19,7 @@ export const Circle = () => {
         delay: 0.5,
         duration: 2,
       }}
-      className="absolute w-[90vw] h-[90vw] md:w-[80vh] md:h-[80vh] lg:w-[60vh] lg:h-[60vh] shadow-md shadow-white bg-blue-600 bg-opacity-20 border-4 border-purple-900 rounded-full top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+      className="absolute w-[90vw] h-[90vw] md:w-[80vh] md:h-[80vh]  shadow-md shadow-white bg-blue-600 bg-opacity-20 border-4 border-purple-900 rounded-full top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
     />
   );
 };
