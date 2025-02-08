@@ -1,7 +1,24 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { useEffect } from "react";
 
 const Contact = () => {
+  // Empêcher le scroll du body quand la modale est ouverte
+  useEffect(() => {
+    document.body.style.overflow = "hidden";
+    // Fix pour iOS Safari
+    document.documentElement.style.position = "fixed";
+    document.documentElement.style.width = "100%";
+    document.documentElement.style.height = "100%";
+
+    return () => {
+      document.body.style.overflow = "";
+      document.documentElement.style.position = "";
+      document.documentElement.style.width = "";
+      document.documentElement.style.height = "";
+    };
+  }, []);
+
   const skills = [
     {
       category: "Frontend",
@@ -74,107 +91,108 @@ const Contact = () => {
   ];
 
   return (
-    <div className="absolute w-[100vw] h-[100vh] overflow-y-auto">
-      <div className="absolute inset-0 bg-black/40 backdrop-blur-md" />
-      <div className="relative z-10 container mx-auto px-4 py-16">
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="mb-16 text-center"
-        >
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-            À propos de moi
-          </h2>
-          <p className="text-lg text-gray-300 leading-relaxed">
-            Passionné par le développement web et les nouvelles technologies, je
-            crée des expériences numériques uniques et immersives. Mon approche
-            combine créativité et expertise technique pour donner vie à vos
-            projets.
-          </p>
-        </motion.div>
-
-        {/* Compétences */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="mb-16"
-        >
-          <h3 className="text-2xl font-bold text-white mb-8 text-center">
-            Compétences
-          </h3>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {skills.map((skillGroup, index) => (
-              <motion.div
-                key={skillGroup.category}
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.4, delay: 0.1 * index }}
-                className="bg-white/10 backdrop-blur-lg rounded-lg p-6 border border-white/20 hover:bg-white/20 transition-all duration-300"
-              >
-                <h4 className="text-xl font-semibold text-white mb-4">
-                  {skillGroup.category}
-                </h4>
-                <ul className="space-y-2">
-                  {skillGroup.items.map((item) => (
-                    <li key={item} className="text-gray-300">
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
-
-        {/* Contact */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          className="text-center"
-        >
-          <h3 className="text-2xl font-bold text-white mb-8">Me contacter</h3>
-          <div className="flex justify-center space-x-6">
-            {socialLinks.map((link) => (
-              <Link
-                key={link.name}
-                href={link.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-white/80 hover:text-white transition-colors duration-200"
-              >
-                <span className="sr-only">{link.name}</span>
-                {link.icon}
-              </Link>
-            ))}
-          </div>
-        </motion.div>
-
-        {/* Appel à l'action */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 0.6 }}
-          className="mt-16 text-center bg-white/10 backdrop-blur-lg rounded-lg p-8 border border-white/20 max-w-4xl mx-auto hover:bg-white/20 transition-all duration-300"
-        >
-          <p className="text-lg text-gray-300 mb-6">
-            Vous avez un projet en tête ? N&apos;hésitez pas à me contacter pour
-            en discuter ! (réduction pour les projets de site pour la création
-            artistique)
-          </p>
-          <Link
-            href="mailto:votre@email.com"
-            className="inline-block px-8 py-3 bg-white/10 hover:bg-white/20 text-white rounded-full border border-white/20 transition-colors duration-200"
+    <div className="fixed inset-0 z-50 flex flex-col bg-black/40 backdrop-blur-md overflow-y-auto overscroll-none">
+      <div className="min-h-screen w-full flex-1">
+        <div className="container mx-auto px-4 py-8 md:py-16">
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="mb-8 md:mb-16 text-center"
           >
-            Démarrer un projet
-          </Link>
-        </motion.div>
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+              À propos de moi
+            </h2>
+            <p className="text-lg text-gray-300 leading-relaxed">
+              Passionné par le développement web et les nouvelles technologies, je
+              crée des expériences numériques uniques et immersives. Mon approche
+              combine créativité et expertise technique pour donner vie à vos
+              projets.
+            </p>
+          </motion.div>
+
+          {/* Compétences */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="mb-8 md:mb-16"
+          >
+            <h3 className="text-2xl font-bold text-white mb-8 text-center">
+              Compétences
+            </h3>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8">
+              {skills.map((skillGroup, index) => (
+                <motion.div
+                  key={skillGroup.category}
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.4, delay: 0.1 * index }}
+                  className="bg-white/10 backdrop-blur-lg rounded-lg p-4 md:p-6 border border-white/20 hover:bg-white/20 transition-all duration-300"
+                >
+                  <h4 className="text-xl font-semibold text-white mb-4">
+                    {skillGroup.category}
+                  </h4>
+                  <ul className="space-y-2">
+                    {skillGroup.items.map((item) => (
+                      <li key={item} className="text-gray-300">
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+
+          {/* Contact */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className="text-center mb-8 md:mb-16"
+          >
+            <h3 className="text-2xl font-bold text-white mb-8">Me contacter</h3>
+            <div className="flex justify-center space-x-6">
+              {socialLinks.map((link) => (
+                <Link
+                  key={link.name}
+                  href={link.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-white/80 hover:text-white transition-colors duration-200"
+                >
+                  <span className="sr-only">{link.name}</span>
+                  {link.icon}
+                </Link>
+              ))}
+            </div>
+          </motion.div>
+
+          {/* Appel à l'action */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.6 }}
+            className="text-center bg-white/10 backdrop-blur-lg rounded-lg p-4 md:p-8 border border-white/20 max-w-4xl mx-auto hover:bg-white/20 transition-all duration-300"
+          >
+            <p className="text-lg text-gray-300 mb-6">
+              Vous avez un projet en tête ? N&apos;hésitez pas à me contacter pour
+              en discuter ! (réduction pour les projets de site pour la création
+              artistique)
+            </p>
+            <Link
+              href="mailto:aadelbos@tuta.com"
+              className="inline-block px-6 md:px-8 py-3 bg-white/10 hover:bg-white/20 text-white rounded-full border border-white/20 transition-colors duration-200"
+            >
+              Démarrer un projet
+            </Link>
+          </motion.div>
+        </div>
       </div>
     </div>
   );

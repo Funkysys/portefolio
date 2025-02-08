@@ -191,17 +191,6 @@ const RealisationPortrait = () => {
                   transform: index % 2 === 0 ? 'translateX(-100%)' : 'translateX(0)',
                 }}
               />
-
-              {/* Nom de la planète */}
-              <div 
-                className="absolute top-1/2 transform -translate-y-1/2 text-white font-bold text-lg md:text-xl bg-black/40 px-4 py-2 rounded-full backdrop-blur-sm border border-white/10"
-                style={{ 
-                  left: index % 2 === 0 ? 'calc(100% + 1rem)' : 'auto',
-                  right: index % 2 === 0 ? 'auto' : 'calc(100% + 1rem)',
-                }}
-              >
-                Planète {project.name}
-              </div>
             </motion.div>
           );
         })}
