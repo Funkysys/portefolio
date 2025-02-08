@@ -7,7 +7,7 @@ type PlanetContent = {
   title: string;
   description: string;
   color: string;
-  image: string;
+  image?: string;
   link?: string;
 };
 
@@ -97,7 +97,6 @@ const RealisationPortrait = () => {
           description:
             "Découvrez mes projets interactifs et immersifs, créés avec passion et expertise pour vous offrir des expériences uniques.",
           color: "transparent",
-          image: "url('/images/default-bg.jpg')",
         };
 
   return (
@@ -174,7 +173,8 @@ const RealisationPortrait = () => {
                 style={{
                   width: `${project.size}vw`,
                   height: `${project.size}vw`,
-                  backgroundImage: project.image,
+                  backgroundImage: project.image ? project.image : '',
+                  backgroundRepeat: 'no-repeat',
                   backgroundSize: 'cover',
                   backgroundPosition: 'center',
                 }}

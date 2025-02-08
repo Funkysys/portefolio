@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Belleza, Geist, Geist_Mono, Roboto, Ruda } from "next/font/google";
 import "./globals.css";
 
@@ -11,6 +11,7 @@ const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
 });
+
 const roboto = Roboto({
   subsets: ["latin"],
   weight: ["400", "700"],
@@ -25,9 +26,14 @@ const belleza = Belleza({
 
 const ruda = Ruda({
   subsets: ["latin"],
-  weight: ["400", "700"], // Choisissez les poids désirés
+  weight: ["400", "700"],
   variable: "--font-ruda",
 });
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+};
 
 export const metadata: Metadata = {
   title: "Antoine Delbos | Portfolio",
@@ -51,10 +57,6 @@ export const metadata: Metadata = {
     description: "Portfolio d'Antoine Delbos - Développeur Full Stack spécialisé en React, Next.js, et Node.js",
     creator: "@AdelAabid",
   },
-  viewport: {
-    width: "device-width",
-    initialScale: 1,
-  },
   icons: {
     icon: "/favicon.ico",
     apple: "/apple-touch-icon.png",
@@ -67,9 +69,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="fr">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${ruda.variable} ${belleza.variable} ${roboto.variable}  antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${roboto.variable} ${belleza.variable} ${ruda.variable} font-sans bg-gradient-to-br from-cyan-950 to-cyan-900 text-cyan-50`}
       >
         {children}
       </body>

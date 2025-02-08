@@ -8,7 +8,7 @@ type PlanetContent = {
   title: string;
   description: string;
   color: string;
-  image: string;
+  image?: string;
   link?: string;
 };
 
@@ -116,7 +116,6 @@ const SolarSystem = () => {
     description:
       "Découvrez mes projets interactifs et immersifs, créés avec passion et expertise pour vous offrir des expériences obtimales.",
     color: "transparent",
-    image: "url('/images/default-bg.jpg')",
   };
 
   const currentContent: PlanetContent =
@@ -275,7 +274,6 @@ const SolarSystem = () => {
                     <Link
                       href={currentContent.link}
                       target="_blank"
-                      rel="noopener noreferrer"
                       className="text-lg border-2 px-3 py-2 rounded-md bg-yellow-400 text-cyan-950 hover:text-cyan-200 hover:bg-yellow-800 transition-colors duration-200"
                     >
                       Visiter le site
@@ -326,7 +324,7 @@ const SolarSystem = () => {
                   left: `calc(50% + ${orbitDistance * Math.cos(angle)}vw)`,
                   top: `calc(50% + ${orbitDistance * Math.sin(angle)}vw)`,
                   zIndex: 3,
-                  backgroundImage: planet.image,
+                  backgroundImage: planet.image !== "" ? planet.image : "",
                   backgroundSize: "cover",
                   backgroundPosition: "center",
                 }}
