@@ -69,7 +69,7 @@ const SolarSystem = () => {
       z: 60,
       color: "yellow",
       description:
-        "Réalisation d'un site vitrine pour mon titre RNCP de développeur web et web mobile représentant un faux restaurant en Symphony et NextJS. Il devait contenir la possibilité de réserver une table, de consulter le menu et de contacter le restaurant. J'y ai rajouter la possibilité pour l'utilisateur la possibilité d'enregistrer ses allergies pour mettre à jour la carte en fonction de ses restrictions alimentaires.",
+        "Réalisation d'un site pour mon titre RNCP de développeur web et web mobile représentant un faux restaurant en Symphony et NextJS. Il devait contenir la possibilité de réserver une table, de consulter le menu et de contacter le restaurant. J'y ai rajouter la possibilité pour l'utilisateur la possibilité d'enregistrer ses allergies pour mettre à jour la carte en fonction de ses restrictions alimentaires.",
       image: "url('/images/quai-antique.png')",
       link: "https://quai-antique-front.vercel.app/",
     },
@@ -105,7 +105,7 @@ const SolarSystem = () => {
       z: 100,
       color: "purple",
       description:
-        "Développement d'un site vitrine static pour un stage d'improvisation en NextJs.",
+        "Développement d'un site vitrine pour un stage d'improvisation en NextJs.",
       image: "url('/images/stage2.png')",
       link: "https://stagemusicaldulot.fr",
     },
@@ -139,7 +139,7 @@ const SolarSystem = () => {
   };
 
   return (
-    <div className="relative w-full h-screen flex justify-center items-center overflow-hidden font-ruda">
+    <div className="relative w-full h-[110vh] flex justify-center items-center overflow-hidden font-ruda">
       {/* Étoiles */}
       <Star x="10%" y="8%" hidden scale={0.9} />
       <Star x="26%" y="17%" hidden scale={0.8} />
