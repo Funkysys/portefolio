@@ -74,15 +74,15 @@ const Contact = () => {
   ];
 
   return (
-    <div className="fixed inset-0 z-50 overflow-y-auto bg-gradient-to-br from-cyan-950/90 to-cyan-900/90 backdrop-blur-sm">
-      <div className="min-h-screen w-full py-8 px-4">
-        <div className="max-w-7xl mx-auto">
+    <div className="fixed inset-0 z-50 overflow-y-auto bg-black/40 backdrop-blur-md">
+      <div className="absolute w-full min-h-[100dvh]">
+        <div className="container mx-auto px-4 py-16">
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="mb-12 text-center"
+            className="mb-16 text-center"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
               À propos de moi
@@ -101,12 +101,12 @@ const Contact = () => {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="mb-12"
+            className="mb-16"
           >
             <h3 className="text-2xl font-bold text-white mb-8 text-center">
               Compétences
             </h3>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {skills.map((skillGroup, index) => (
                 <motion.div
                   key={skillGroup.category}
@@ -136,7 +136,7 @@ const Contact = () => {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-center mb-12"
+            className="text-center mb-16"
           >
             <h3 className="text-2xl font-bold text-white mb-8">Me contacter</h3>
             <div className="flex justify-center space-x-6">
