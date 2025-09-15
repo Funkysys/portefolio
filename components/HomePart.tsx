@@ -7,12 +7,12 @@ import Title from "./Title";
 const HomPart = () => {
   return (
     <>
-      <div className="flex justify-center items-center gap-8">
-        <div>
+      <div className="flex flex-col md:flex-row justify-center items-center gap-8 w-full px-2 sm:px-4">
+        <div className="flex flex-col items-center w-full md:w-auto">
           <Title />
           <SocialButtons />
         </div>
-        <div className="w-64 h-64 md:w-80 md:h-80 relative rounded-full overflow-hidden border-4 border-zinc-700 shadow-2xl">
+        <div className="w-40 h-40 sm:w-56 sm:h-56 md:w-80 md:h-80 relative rounded-full overflow-hidden border-4 border-zinc-700 shadow-2xl mt-6 md:mt-0">
           <Image
             src={"/images/profil.png"}
             fill
@@ -21,7 +21,7 @@ const HomPart = () => {
           />
         </div>
       </div>
-      <div className="flex justify-center items-center flex-wrap max-w-[80vw] mx-auto mt-4">
+      <div className="flex justify-center items-center flex-wrap max-w-[95vw] md:max-w-[80vw] mx-auto mt-4 gap-2 md:gap-4">
         {skills.map((skillGroup) => (
           <div
             key={skillGroup.items.map((i) => i.name).join(",")}

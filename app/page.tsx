@@ -33,7 +33,7 @@ export default function Home() {
   return (
     <main className="flex w-full max-w-[100vw] min-h-screen flex-col gap-8 bg-perso-bg">
       {/* Première section animée à l'ouverture */}
-      <section className="flex w-full min-h-screen gap-8 justify-center items-center">
+      <section className="flex w-full min-h-screen gap-8 justify-center items-center px-2 sm:px-4 flex-col md:flex-row">
         <motion.div
           className="relative flex flex-col w-full h-full gap-8 justify-center items-center font-roboto"
           initial={{ opacity: 0, y: 40 }}
@@ -47,7 +47,7 @@ export default function Home() {
       {/* Deuxième section animée au scroll */}
       <motion.div
         ref={secondSectionRef}
-        className="relative h-[100vh] flex justify-center items-center"
+        className="relative min-h-[80vh] h-auto flex justify-center items-center px-2 sm:px-4"
         initial={{ opacity: 0, y: 40 }}
         animate={showSecond ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
         transition={{ duration: 0.8, ease: "easeOut" }}

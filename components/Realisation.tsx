@@ -27,33 +27,33 @@ const realisations = [
 
 const Realisation = () => {
   return (
-    <section className="w-full max-w-[80vw]  mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 ">
+    <section className="w-full max-w-[98vw] md:max-w-[80vw] mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-10 px-2 sm:px-0 pb-16 md:pb-0">
       {realisations.map((r) => (
         <Link
           key={r.name}
           href={r.link}
           target="_blank"
           rel="noopener noreferrer"
-          className="group relative rounded-3xl overflow-hidden bg-gradient-to-br from-zinc-800/80 to-zinc-900/90 border border-zinc-700 shadow-xl hover:shadow-2xl transition-all duration-300 flex flex-col justify-between items-center p-8 hover:scale-[1.025]"
+          className="group relative rounded-3xl overflow-hidden bg-gradient-to-br from-zinc-800/80 to-zinc-900/90 border border-zinc-700 shadow-xl hover:shadow-2xl transition-all duration-300 flex flex-col justify-between items-center p-4 sm:p-6 md:p-8 hover:scale-[1.025] min-h-[340px]"
         >
           <div className="flex-1 flex flex-col items-center w-full">
-            <div className="w-36 h-36 mb-6 rounded-full overflow-hidden border-4 border-zinc-700 shadow-lg bg-zinc-700 flex items-center justify-center">
+            <div className="w-24 h-24 sm:w-36 sm:h-36 mb-4 sm:mb-6 rounded-full overflow-hidden border-4 border-zinc-700 shadow-lg bg-zinc-700 flex items-center justify-center">
               <Image
                 src={r.image}
                 alt={r.name}
-                width={144}
-                height={144}
+                width={96}
+                height={96}
                 className="object-contain"
               />
             </div>
-            <h3 className="text-2xl font-bold text-white mb-3 text-center group-hover:text-yellow-400 transition-colors">
+            <h3 className="text-lg sm:text-2xl font-bold text-white mb-2 sm:mb-3 text-center group-hover:text-yellow-400 transition-colors">
               {r.name}
             </h3>
-            <p className="text-zinc-300 text-center text-base leading-relaxed mb-2">
+            <p className="text-zinc-300 text-center text-sm sm:text-base leading-relaxed mb-2">
               {r.description}
             </p>
           </div>
-          <span className="mt-4 inline-block px-4 py-2 rounded-full bg-yellow-400 text-zinc-900 font-semibold text-sm shadow hover:bg-yellow-500 transition-colors">
+          <span className="mt-4 inline-block px-4 py-2 rounded-full bg-yellow-400 text-zinc-900 font-semibold text-xs sm:text-sm shadow hover:bg-yellow-500 transition-colors">
             Voir le projet
           </span>
           <span className="absolute inset-0 pointer-events-none group-hover:bg-yellow-400/10 transition-colors duration-300 rounded-3xl" />

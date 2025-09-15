@@ -41,7 +41,7 @@ const iconMap: Record<string, React.ReactNode> = {
 // ...
 const SkillsSection = () => {
   return (
-    <section className="w-full max-w-[80vw] mx-auto flex flex-wrap justify-center gap-8">
+    <section className="w-full max-w-[98vw] md:max-w-[80vw] mx-auto flex flex-wrap justify-center gap-3 sm:gap-6 md:gap-8 px-2">
       {skills[0].items.map((item, i) => (
         <motion.div
           key={item.name}
@@ -52,12 +52,12 @@ const SkillsSection = () => {
             opacity: { duration: 0.1, delay: 0.25 + i * 0.05, ease: "easeOut" },
           }}
           style={{ perspective: 600 }}
-          className="flex flex-col items-center justify-center w-24 h-18 py-2 bg-zinc-800 rounded-xl shadow transition-all duration-200 hover:scale-105 hover:shadow-2xl group cursor-pointer border border-zinc-700 hover:border-yellow-400 [perspective:600px]"
+          className="flex flex-col items-center justify-center w-16 h-16 sm:w-24 sm:h-18 py-2 bg-zinc-800 rounded-xl shadow transition-all duration-200 hover:scale-105 hover:shadow-2xl group cursor-pointer border border-zinc-700 hover:border-yellow-400 [perspective:600px]"
         >
-          <div className="transition-colors duration-200 group-hover:text-yellow-400 text-white flex items-center justify-center h-8">
+          <div className="transition-colors duration-200 group-hover:text-yellow-400 text-white flex items-center justify-center h-6 sm:h-8">
             {iconMap[item.icon]}
           </div>
-          <span className="text-white text-sm font-semibold text-center group-hover:text-yellow-400 transition-colors duration-200 mt-2">
+          <span className="text-white text-xs sm:text-sm font-semibold text-center group-hover:text-yellow-400 transition-colors duration-200 mt-2">
             {item.name}
           </span>
         </motion.div>

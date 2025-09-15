@@ -22,14 +22,14 @@ const links = [
 ];
 
 const SocialButtons = () => (
-  <div className="flex flex-wrap gap-4 justify-center my-6">
+  <div className="flex flex-wrap gap-2 sm:gap-4 justify-center my-4 sm:my-6 w-full px-2">
     {links.map((link) => (
       <a
         key={link.label}
         href={link.href}
         target="_blank"
         rel="noopener noreferrer"
-        className={`flex items-center gap-2 px-5 py-2 rounded-full font-semibold shadow transition-colors duration-200 ${link.color}`}
+        className={`flex items-center gap-1 sm:gap-2 px-3 sm:px-5 py-2 rounded-full font-semibold shadow transition-colors duration-200 text-xs sm:text-base ${link.color}`}
       >
         {link.icon}
         <span>{link.label}</span>

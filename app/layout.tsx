@@ -83,11 +83,12 @@ export default function RootLayout({
   return (
     <html lang="fr">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${roboto.variable} ${belleza.variable} ${ruda.variable} font-sans bg-gradient-to-br from-cyan-950 to-cyan-900 text-cyan-50`}
+        className={`${geistSans.variable} ${geistMono.variable} ${roboto.variable} ${belleza.variable} ${ruda.variable} font-sans bg-gradient-to-br from-cyan-950 to-cyan-900 text-cyan-50 min-h-screen w-full max-w-[100vw] overflow-x-hidden sm:text-base text-sm`}
       >
-        {children}
-
-        <Footer />
+        <div className="w-full min-h-screen flex flex-col justify-between">
+          {children}
+          <Footer />
+        </div>
       </body>
     </html>
   );
