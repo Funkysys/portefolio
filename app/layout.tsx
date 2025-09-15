@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Belleza, Geist, Geist_Mono, Roboto, Ruda } from "next/font/google";
+import Footer from "../components/Footer";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -37,8 +38,17 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   title: "Antoine Delbos | Portfolio",
-  description: "Portfolio d'Antoine Delbos - Développeur Full Stack spécialisé en React, Next.js, et Node.js. Découvrez mes projets et compétences en développement web.",
-  keywords: ["développeur web", "full stack", "react", "next.js", "node.js", "typescript", "portfolio"],
+  description:
+    "Portfolio d'Antoine Delbos - Développeur Full Stack spécialisé en React, Next.js, et Node.js. Découvrez mes projets et compétences en développement web.",
+  keywords: [
+    "développeur web",
+    "full stack",
+    "react",
+    "next.js",
+    "node.js",
+    "typescript",
+    "portfolio",
+  ],
   authors: [{ name: "Antoine Delbos" }],
   creator: "Antoine Delbos",
   publisher: "Antoine Delbos",
@@ -48,13 +58,15 @@ export const metadata: Metadata = {
     locale: "fr_FR",
     url: "https://antoinedelbos-portefolio.vercel.app/",
     title: "Antoine Delbos | Portfolio",
-    description: "Portfolio d'Antoine Delbos - Développeur Full Stack spécialisé en React, Next.js, et Node.js",
+    description:
+      "Portfolio d'Antoine Delbos - Développeur Full Stack spécialisé en React, Next.js, et Node.js",
     siteName: "Portfolio d'Antoine Delbos",
   },
   twitter: {
     card: "summary_large_image",
     title: "Antoine Delbos | Portfolio",
-    description: "Portfolio d'Antoine Delbos - Développeur Full Stack spécialisé en React, Next.js, et Node.js",
+    description:
+      "Portfolio d'Antoine Delbos - Développeur Full Stack spécialisé en React, Next.js, et Node.js",
     creator: "@AdelAabid",
   },
   icons: {
@@ -74,6 +86,8 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} ${roboto.variable} ${belleza.variable} ${ruda.variable} font-sans bg-gradient-to-br from-cyan-950 to-cyan-900 text-cyan-50`}
       >
         {children}
+
+        <Footer />
       </body>
     </html>
   );

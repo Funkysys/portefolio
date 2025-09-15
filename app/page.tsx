@@ -1,102 +1,58 @@
 "use client";
 
-import { Circle } from "@/components/Circle";
-import Contact from "@/components/Contact";
-import { Planet } from "@/components/Planet";
+import HomePart from "@/components/HomePart";
 import Realisation from "@/components/Realisation";
-import { Spaceship } from "@/components/SpaceShip";
-import { Star } from "@/components/Star";
-import Title from "@/components/Title";
-import { motion, useScroll, useSpring, useTransform } from "framer-motion";
+import { motion } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
 
 export default function Home() {
-  const { scrollYProgress } = useScroll();
-  const smoothProgress = useSpring(scrollYProgress, {
-    stiffness: 50,
-    damping: 15,
-    restDelta: 0.001,
-  });
+  const [showFirst, setShowFirst] = useState(false);
+  const [showSecond, setShowSecond] = useState(false);
+  const secondSectionRef = useRef<HTMLDivElement>(null);
 
-  const firstSectionOpacity = useTransform(smoothProgress, [0, 0.15], [1, 0]);
-  const secondSectionOpacity = useTransform(
-    smoothProgress,
-    [0.1, 0.15],
-    [0, 1]
-  );
-  const contactY = useTransform(smoothProgress, [0.85, 0.95], ["100%", "0%"]);
-  const contactOpacity = useTransform(smoothProgress, [0.85, 0.92], [0, 1]);
+  useEffect(() => {
+    const timer1 = setTimeout(() => setShowFirst(true), 100);
+    return () => clearTimeout(timer1);
+  }, []);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      if (!secondSectionRef.current) return;
+      const rect = secondSectionRef.current.getBoundingClientRect();
+      const windowHeight =
+        window.innerHeight || document.documentElement.clientHeight;
+      if (rect.top < windowHeight * 0.85) {
+        setShowSecond(true);
+        window.removeEventListener("scroll", handleScroll);
+      }
+    };
+    window.addEventListener("scroll", handleScroll);
+    handleScroll(); // check au cas où déjà visible
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
   return (
-    <main className="flex w-full h-[250vh] max-w-[100vw] md:h-[240vh] min-h-screen flex-col gap-8 bg-perso-bg">
-      {/* Première section */}
-      <div className="flex w-full min-h-screen flex-col gap-8 justify-center items-center">
+    <main className="flex w-full max-w-[100vw] min-h-screen flex-col gap-8 bg-perso-bg">
+      {/* Première section animée à l'ouverture */}
+      <section className="flex w-full min-h-screen gap-8 justify-center items-center">
         <motion.div
-          className="relative flex w-full h-full flex-col gap-8 justify-center items-center font-roboto md:my-[40vh] "
-          style={{
-            opacity: firstSectionOpacity,
-          }}
+          className="relative flex flex-col w-full h-full gap-8 justify-center items-center font-roboto"
+          initial={{ opacity: 0, y: 40 }}
+          animate={showFirst ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.2, ease: "easeOut" }}
         >
-          {/* Étoiles (ajustées en fonction de l'écran) */}
-          <Star x="5%" y="10%" hidden scale={0.8} />
-          <Star x="10%" y="70%" hidden scale={0.6} />
-          <Star x="17%" y="82%" small />
-          <Star x="9%" y="10%" small scale={0.5} />
-          <Star x="20%" y="30%" hidden scale={0.4} />
-          <Star x="43%" y="90%" small scale={0.7} />
-          <Star x="47%" y="17%" small />
-          <Star x="77%" y="15%" small scale={0.6} />
-          <Star x="80%" y="60%" hidden scale={0.9} />
-          <Star x="83%" y="78%" small scale={0.8} />
-          <Star x="90%" y="15%" hidden scale={0.7} />
-          <Star x="87%" y="92%" hidden scale={0.8} />
-
-          {/* Planète principale et vaisseau */}
-          <Planet radius={270} size="80px" speed={8} hidden />
-          <Planet radius={180} size="70px" speed={8} y={120} />
-          <Spaceship
-            hidden
-            radius={265}
-            size="80px"
-            imgSize={100}
-            speed={12}
-            imageSrc="/images/spaceShip.png"
-          />
-          <Spaceship
-            radius={150}
-            size="70px"
-            imgSize={120}
-            speed={12}
-            y={-130}
-            imageSrc="/images/spaceShip.png"
-          />
-
-          {/* Titre */}
-          <Title />
-          <Circle />
+          <HomePart />
         </motion.div>
-      </div>
+      </section>
 
-      {/* Deuxième section */}
+      {/* Deuxième section animée au scroll */}
       <motion.div
-        className="relative z-0 mb-[70vh]"
-        style={{
-          opacity: secondSectionOpacity,
-        }}
+        ref={secondSectionRef}
+        className="relative h-[100vh] flex justify-center items-center"
+        initial={{ opacity: 0, y: 40 }}
+        animate={showSecond ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
       >
         <Realisation />
-      </motion.div>
-
-      {/* Section Contact avec effet de superposition */}
-      <motion.div
-        className="fixed top-0 left-0 w-[100vw] h-[100vh] z-50"
-        style={{
-          opacity: contactOpacity,
-          y: contactY,
-        }}
-      >
-        <div className="w-full h-full bg-black/60 backdrop-blur-sm">
-          <Contact />
-        </div>
       </motion.div>
     </main>
   );
