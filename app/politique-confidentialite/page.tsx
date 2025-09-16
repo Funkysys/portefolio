@@ -125,9 +125,9 @@ const PolitiqueConfidentialite = () => (
         (art. 34), vous disposez d’un droit d’accès, de modification, de
         rectification et de suppression des données qui vous concernent. Pour
         exercer ce droit, vous pouvez me contacter par mail à l’adresse
-        contact@springgreen-crocodile-204519.hostingersite.com ou par courrier à
-        l’adresse :<br />
-        Julien DAHY 46 Grand Rue, 68830 Oderen
+        antoine.delbos.developpement@gmail.com ou par courrier à l’adresse :
+        <br />
+        Antoine Delbos, 2 rue lancefoc, 31000 Toulouse
         <br />
         Conformément à la réglementation en vigueur, votre demande doit être
         signée et accompagnée de la photocopie d’un titre d’identité portant
@@ -140,10 +140,10 @@ const PolitiqueConfidentialite = () => (
       <h2 className="text-xl font-semibold mb-2">Sécurité</h2>
       <p>
         La sécurité de vos Données personnelles est très importante pour moi.
-        Les données personnelles recueillies sur le site www.julien-dahy.com
-        sont traitées selon des protocoles sécurisés qui limitent
-        considérablement les risques d’interception ou de récupération par des
-        tiers.
+        Les données personnelles recueillies sur le site
+        https://antoinedelbos-portefolio.vercel.app/ sont traitées selon des
+        protocoles sécurisés qui limitent considérablement les risques
+        d’interception ou de récupération par des tiers.
         <br />
         Toutefois, en raison de la nature ouverte du réseau internet, je ne peux
         pas exclure les actes de piratage, ou l’accès non autorisé des tiers. En
