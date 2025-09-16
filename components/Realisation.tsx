@@ -49,6 +49,7 @@ const Realisation = () => {
             <h3 className="text-lg sm:text-2xl font-bold text-white mb-2 sm:mb-3 text-center group-hover:text-yellow-400 transition-colors">
               {r.name}
             </h3>
+            d
             <p className="text-zinc-300 text-center text-sm sm:text-base leading-relaxed mb-2">
               {r.description}
             </p>
