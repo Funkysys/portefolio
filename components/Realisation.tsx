@@ -13,13 +13,13 @@ const realisations = [
     name: "Alter Nativ Publishing",
     description:
       "Développement de la partie Frontend pour une édition musicale. Le défi était de créer un player spécifique contenant des markers et des régions cliquables et configurables à souhait pour les clients ainsi qu'un système de recherche personnalisé.",
-    image: "/images/alter_nativ.png",
+    image: "/images/alter-nativ.png",
     link: "https://alternativpublishing.com",
   },
   {
     name: "In Extremis Formation",
     description:
-      "Développement d'un site vitrine pour un stage d'improvisation en NextJs.",
+      "Développement d'un site vitrine pour une association proposant des cours en ligne, des stages, etc.... sur la musique et l'improvisation.",
     image: "/images/in-extremis.png",
     link: "https://in-extremis-formation.fr",
   },
@@ -37,19 +37,18 @@ const Realisation = () => {
           className="group relative rounded-3xl overflow-hidden bg-gradient-to-br from-zinc-800/80 to-zinc-900/90 border border-zinc-700 shadow-xl hover:shadow-2xl transition-all duration-300 flex flex-col justify-between items-center p-4 sm:p-6 md:p-8 hover:scale-[1.025] min-h-[340px]"
         >
           <div className="flex-1 flex flex-col items-center w-full">
-            <div className="w-24 h-24 sm:w-36 sm:h-36 mb-4 sm:mb-6 rounded-full overflow-hidden border-4 border-zinc-700 shadow-lg bg-zinc-700 flex items-center justify-center">
+            <div className="aspect-square w-24 sm:w-36 mb-4 sm:mb-6 rounded-full overflow-hidden border-4 border-zinc-700 shadow-lg bg-zinc-700 flex items-center justify-center">
               <Image
                 src={r.image}
                 alt={r.name}
-                width={96}
-                height={96}
-                className="object-contain"
+                width={144}
+                height={144}
+                className="object-cover w-full h-full rounded-full"
               />
             </div>
             <h3 className="text-lg sm:text-2xl font-bold text-white mb-2 sm:mb-3 text-center group-hover:text-yellow-400 transition-colors">
               {r.name}
             </h3>
-            d
             <p className="text-zinc-300 text-center text-sm sm:text-base leading-relaxed mb-2">
               {r.description}
             </p>
