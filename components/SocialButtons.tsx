@@ -15,7 +15,7 @@ const links = [
   },
   {
     label: "LinkedIn",
-    href: "https://www.linkedin.com/in/antoine-delbos/",
+    href: "https://www.linkedin.com/in/antoine-delbos-916250223/",
     icon: <FaLinkedin size={20} />,
     color: "bg-blue-600 text-white hover:bg-blue-700",
   },
